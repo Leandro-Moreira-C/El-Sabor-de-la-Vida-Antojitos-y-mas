@@ -156,7 +156,7 @@
     function crearTarjeta(plato) {
       /* Mensaje pre-rellenado para WhatsApp */
       const msg = encodeURIComponent(
-        `Hola, quiero pedir: *${plato.nombre}* – C$${plato.precio} 🍽️`
+        `Hola, quiero pedir: *${plato.nombre}* – C$${plato.precio}`
       );
       const urlWA = `https://wa.me/50581675714?text=${msg}`;
 
@@ -379,12 +379,12 @@
      */
     function notificarWhatsApp(d) {
       const texto = encodeURIComponent(
-        `📅 *Nueva Reservación – El Sabor de la Vida*\n\n` +
-        `👤 Nombre:    ${d.nombre} ${d.primerApellido} ${d.segundoApellido}\n` +
-        `📞 Teléfono:  ${d.telefono}\n` +
-        `🎂 Edad:      ${d.edad}\n` +
-        `📆 Fecha:     ${d.fechaReserva}\n` +
-        `📝 Nota:      ${d.nota || 'Sin notas adicionales'}`
+        `*Nueva Reservación – El Sabor de la Vida*\n\n` +
+        `Nombre:    ${d.nombre} ${d.primerApellido} ${d.segundoApellido}\n` +
+        `Teléfono:  ${d.telefono}\n` +
+        `Edad:      ${d.edad}\n` +
+        `Fecha:     ${d.fechaReserva}\n` +
+        `Nota:      ${d.nota || 'Sin notas adicionales'}`
       );
       window.open(`https://wa.me/50581675714?text=${texto}`, '_blank', 'noopener');
     }
@@ -455,7 +455,7 @@
         console.error('[Reserva] Error de red:', err);
         mensajeReservaEl.className   = 'reserva__mensaje reserva__mensaje--error';
         mensajeReservaEl.textContent =
-          'Puedes reservar directamente por WhatsApp. 👆';
+          'Puedes reservar directamente por WhatsApp.';
 
         /* Abrir WhatsApp aunque haya fallo de red */
         notificarWhatsApp(datos);

@@ -52,13 +52,14 @@
       <!-- nav__menu – enlaces de escritorio -->
       <nav class="nav__menu" id="navMenu" aria-label="Menú principal">
         <a href="#inicio"        class="nav__enlace nav__enlace--activo">Inicio</a>
-        <a href="#nosotros"      class="nav__enlace">Nosotros</a>
         <a href="#menu"          class="nav__enlace">Menú</a>
         <a href="#galeria"       class="nav__enlace">Galería</a>
         <a href="#promociones"   class="nav__enlace">Promociones</a>
         <a href="#catering"      class="nav__enlace">Catering</a>
         <a href="#contacto"      class="nav__enlace">Contacto</a>
         <a href="#reservaciones" class="nav__enlace">Reservaciones</a>
+        <a href="#nosotros"      class="nav__enlace">Nosotros</a>
+
       </nav>
 
       <!-- nav__cta – botón reservar (escritorio) -->
@@ -131,56 +132,7 @@
       </div>
     </section>
 
-    <!-- ===========================================================
-         SECCIÓN 2: NOSOTROS
-         Historia del restaurante (columna izquierda) +
-         tarjeta de testimonio verde (columna derecha).
-    =========================================================== -->
-    <section class="nosotros" id="nosotros" aria-label="Nuestra historia">
-      <div class="nosotros__inner container">
-
-        <!-- Columna izquierda: historia -->
-        <div class="nosotros__texto">
-          <span class="label">Nuestra Historia</span>
-          <h2 class="nosotros__titulo">
-            Tradición nicaragüense<br>en cada platillo
-          </h2>
-          <p class="nosotros__parrafo">
-            Desde 2015, llevamos el auténtico sabor de la cocina nicaragüense
-            a Ticuantepe. Cada receta es un tesoro familiar, cada ingrediente
-            es seleccionado con amor.
-          </p>
-          <p class="nosotros__parrafo">
-            Nuestra misión es simple: hacerte sentir como en casa con
-            el sabor que abraza el alma.
-          </p>
-          <a href="#galeria" class="link-flecha">Conoce nuestra historia →</a>
-        </div>
-
-        <!-- Columna derecha: testimonio -->
-        <div class="testimonio" role="region" aria-label="Testimonio de cliente">
-          <span class="testimonio__etiqueta">Testimonio</span>
-          <blockquote class="testimonio__cita">
-            "La comida más auténtica de Ticuantepe. Cada vez que vengo
-            me siento como en la casa de mi abuela en Nicaragua."
-          </blockquote>
-          <div class="testimonio__autor">
-            <div class="testimonio__avatar" aria-hidden="true">👤</div>
-            <div>
-              <strong class="testimonio__nombre">María González</strong>
-              <span class="testimonio__rol">Cliente frecuente</span>
-            </div>
-            <button
-              class="testimonio__nav"
-              id="btnTestimonio"
-              aria-label="Siguiente testimonio"
-            >›</button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+    
     <!-- ===========================================================
          SECCIÓN 3: MENÚ
          Pestañas de categorías. Las tarjetas se inyectan
@@ -249,7 +201,7 @@
     <section class="promo" id="promociones" aria-label="Promociones">
       <div class="container">
         <span class="label">Ofertas Especiales</span>
-        <h2 class="seccion__titulo">Promociones</h2>
+        <h2 class="seccion__titulo">Promociones En Local</h2>
 
         <div class="promo__grid">
 
@@ -359,7 +311,7 @@
               <span class="contacto__icono" aria-hidden="true">📞</span>
               <div>
                 <strong class="contacto__item-titulo">Teléfono</strong>
-                <span class="contacto__item-valor">+505 1234 5678</span>
+                <span class="contacto__item-valor">+505 8167 5714</span>
               </div>
             </li>
           </ul>
@@ -373,7 +325,7 @@
               aria-label="Contactar por WhatsApp"
             >💬 WhatsApp</a>
             <a
-              href="https://maps.google.com/?q=Ticuantepe,Nicaragua"
+              href="https://maps.app.goo.gl/VYUg9gwc4UwLaMfb7"
               target="_blank" rel="noopener"
               class="btn btn--outline-oscuro"
             >Ver en mapa →</a>
@@ -394,6 +346,8 @@
 
       </div>
     </section>
+
+
 
     <!-- ===========================================================
          SECCIÓN 8: RESERVACIONES
@@ -564,7 +518,62 @@
       </div>
     </section>
 
+<!-- ===========================================================
+         SECCIÓN ultimo: NOSOTROS
+         Historia del restaurante (columna izquierda) +
+         tarjeta de testimonio verde (columna derecha).
+    =========================================================== -->
+    <section class="nosotros" id="nosotros" aria-label="Nuestra historia">
+      <div class="nosotros__inner container">
+
+        <!-- Columna izquierda: historia -->
+        <div class="nosotros__texto">
+          <span class="label">Nuestra Historia</span>
+          <h2 class="nosotros__titulo">
+            Tradición nicaragüense<br>en cada platillo
+          </h2>
+          <p class="nosotros__parrafo">
+            Desde 2015, llevamos el auténtico sabor de la cocina nicaragüense
+            a Ticuantepe. Cada receta es un tesoro familiar, cada ingrediente
+            es seleccionado con amor.
+          </p>
+          <p class="nosotros__parrafo">
+            Nuestra misión es simple: hacerte sentir como en casa con
+            el sabor que abraza el alma.
+          </p>
+          <a href="#galeria" class="link-flecha">Conoce nuestra historia →</a>
+        </div>
+
+        <!-- Columna derecha: testimonio -->
+        <div class="testimonio" role="region" aria-label="Testimonio de cliente">
+          <span class="testimonio__etiqueta">Testimonio</span>
+          <blockquote class="testimonio__cita">
+            "La comida más auténtica de Ticuantepe. Cada vez que vengo
+            me siento como en la casa de mi abuela en Nicaragua."
+          </blockquote>
+          <div class="testimonio__autor">
+            <div class="testimonio__avatar" aria-hidden="true">👤</div>
+            <div>
+              <strong class="testimonio__nombre">María González</strong>
+              <span class="testimonio__rol">Cliente frecuente</span>
+            </div>
+            <button
+              class="testimonio__nav"
+              id="btnTestimonio"
+              aria-label="Siguiente testimonio"
+            >›</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+ 
+
+
+
   </main>
+
+
 
   <!-- ===========================================================
        PIE DE PÁGINA
@@ -582,7 +591,7 @@
         <address class="footer__direccion" style="font-style:normal;">
           2QCR+WP6, C. de los Pochotes<br>Ticuantepe, Nicaragua
         </address>
-        <p class="footer__meta">📞 +505 1234 5678</p>
+        <p class="footer__meta">📞 +505 8167 5714</p>
         <p class="footer__meta">🕐 Lun–Dom: 8:00 AM – 10:00 PM</p>
       </div>
 
