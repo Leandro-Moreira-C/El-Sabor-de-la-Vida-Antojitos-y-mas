@@ -35,8 +35,7 @@
         telefono:         datos.telefono,
         edad:             parseInt(datos.edad, 10),
         fecha_reserva:    datos.fechaReserva,    // ISO "YYYY-MM-DDTHH:MM"
-        nota:             datos.nota || null,
-        estado:           'pendiente'
+        nota:             datos.nota || null
       };
 
       const respuesta = await fetch(
