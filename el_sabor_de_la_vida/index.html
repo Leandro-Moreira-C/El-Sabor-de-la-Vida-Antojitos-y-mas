@@ -15,8 +15,7 @@
 
 
 
-  
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Sabor de la Vida – Cocina Nicaragüense Auténtica</title>
 
@@ -198,44 +197,53 @@
          SECCIÓN 5: PROMOCIONES
          Tarjetas de ofertas especiales del restaurante.
     =========================================================== -->
+    <!-- ===========================================================
+         SECCIÓN 5: PROMOCIONES
+         Tarjetas de ofertas especiales del restaurante.
+    =========================================================== -->
     <section class="promo" id="promociones" aria-label="Promociones">
       <div class="container">
         <span class="label">Ofertas Especiales</span>
         <h2 class="seccion__titulo">Promociones En Local</h2>
 
-        <div class="promo__grid">
+        <!-- Contenedor centrado para una sola promo -->
+        <div class="promo__grid promo__grid--centrado">
 
-          <!-- Promo 1: Combo familiar -->
-          <article class="promo__tarjeta" aria-label="Combo Familiar">
-            <div class="promo__icono" aria-hidden="true">🎉</div>
-            <h3 class="promo__titulo">Combo Familiar</h3>
-            <p class="promo__descripcion">
-              2 platos fuertes + 4 bebidas naturales + postre del día.
-              Solo fines de semana.
-            </p>
-            <span class="promo__badge" aria-label="Descuento 20%">20% OFF</span>
-          </article>
+          <!-- Promo única: Almuerzo Ejecutivo -->
+          <article class="promo__tarjeta promo__tarjeta--destacada promo__tarjeta--grande" aria-label="Almuerzo Ejecutivo">
+            <div class="promo__icono" aria-hidden="true">🍽️</div>
+            <span class="promo__badge promo__badge--oscuro" aria-label="Precio especial">C$120</span>
 
-          <!-- Promo 2: Martes de antojitos (tarjeta destacada) -->
-          <article class="promo__tarjeta promo__tarjeta--destacada" aria-label="Martes de Antojitos">
-            <div class="promo__icono" aria-hidden="true">🌮</div>
-            <h3 class="promo__titulo">Martes de Antojitos</h3>
-            <p class="promo__descripcion">
-              Todos los martes: 3 antojitos al precio de 2.
-              Elige entre nachos, tacos, tostones y más.
-            </p>
-            <span class="promo__badge promo__badge--oscuro" aria-label="Promoción 2 por 1">2×1</span>
-          </article>
+            <h3 class="promo__titulo">Almuerzo Ejecutivo</h3>
 
-          <!-- Promo 3: Happy Hour -->
-          <article class="promo__tarjeta" aria-label="Happy Hour">
-            <div class="promo__icono" aria-hidden="true">🍹</div>
-            <h3 class="promo__titulo">Happy Hour</h3>
-            <p class="promo__descripcion">
-              Lunes a viernes de 4:00 PM a 6:00 PM.
-              Todas las bebidas con descuento especial.
-            </p>
-            <span class="promo__badge" aria-label="Descuento 30%">30% OFF</span>
+            <!-- Detalle de lo que incluye -->
+            <ul class="promo__lista" aria-label="Incluye">
+              <li>🍚 Arroz</li>
+              <li>🍌 Tajadas</li>
+              <li>🥩 Carnes <span class="promo__opcional">(opcional)</span></li>
+              <li>🧋 Té frío</li>
+            </ul>
+
+            <!-- Botón con tracking GA4 -->
+            <button
+              class="btn btn--oscuro promo__btn"
+              aria-label="Aprovechar promoción de almuerzo ejecutivo"
+              onclick="
+                gtag('event', 'clic_promocion', {
+                  event_category: 'Promociones',
+                  event_label: 'Almuerzo Ejecutivo',
+                  value: 120
+                });
+                window.open(
+                  'https://wa.me/50581675714?text=' +
+                  encodeURIComponent('Hola, quiero aprovechar la *Promoción de Almuerzo Ejecutivo* 🍽️\n\nArroz + Tajadas + Carnes + Té frío por solo C$120.\n\n¿Está disponible ahora?'),
+                  '_blank', 'noopener'
+                );
+              "
+            >
+              💬 Aprovechar oferta
+            </button>
+
           </article>
 
         </div>
@@ -562,15 +570,43 @@
               id="btnTestimonio"
               aria-label="Siguiente testimonio"
             >›</button>
-          </div>
-        </div>
 
+          </div>
+
+
+        </div>
       </div>
     </section>
- 
+
+      <!-- ===========================================================
+        SECCIÓN: INFORME DE VISITAS
+        Dashboard de Power BI embebido para visualizar
+        el informe de visitas del restaurante.
+    =========================================================== -->
+    <section class="informe" id="informe" aria-label="Informe de visitas">
+      <div class="container">
+        <span class="label">Análisis de Datos</span>
+        <h2 class="seccion__titulo">Informe de Visitas</h2>
+        <p class="reserva__intro">
+          Visualiza en tiempo real las estadísticas de visitas.
+        </p>
+
+        <div class="informe__marco">
+          <iframe
+            title="DefensaPowerBi"
+            width="1140"
+            height="541.25"
+            src="https://app.powerbi.com/reportEmbed?reportId=3562442d-2fb0-477a-8907-f6a09a40a7de&autoAuth=true&ctid=e47646fe-da27-4518-8436-5f8b158ba127"
+            frameborder="0"
+            allowFullScreen="true"
+            style="border-radius: 12px;"
+          ></iframe>
+        </div>
+      </div>
+    </section>
 
 
-
+        
   </main>
 
 
@@ -652,3 +688,4 @@
   <script src="js/app.js"></script>
 </body>
 </html>
+
