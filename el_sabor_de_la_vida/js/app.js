@@ -155,7 +155,7 @@
 
     function crearTarjeta(plato) {
       const msg   = encodeURIComponent(`Hola, quiero pedir: *${plato.nombre}* – C$${plato.precio}`);
-      const urlWA = `https://wa.me/50581675714?text=${msg}`;
+      const urlWA = `https://wa.me/50589472132?text=${msg}`;
       return `
         <article class="menu__tarjeta" aria-label="${plato.nombre}">
           <div class="menu__tarjeta-imagen" aria-hidden="true">${plato.emoji}</div>
@@ -301,7 +301,7 @@
         `📅 Fecha:    ${fechaFormateada}\n` +
         `📝 Nota:     ${d.nota || 'Sin notas adicionales'}`
       );
-      window.open(`https://wa.me/50581675714?text=${texto}`, '_blank', 'noopener');
+      window.open(`https://wa.me/50589472132?text=${texto}`, '_blank', 'noopener');
     }
 
     /**

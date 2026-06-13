@@ -15,7 +15,7 @@
 
 
 
-    <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Sabor de la Vida – Cocina Nicaragüense Auténtica</title>
 
@@ -114,7 +114,7 @@
         <div class="hero__acciones">
           <a href="#menu" class="btn btn--primario">Ver Menú Completo</a>
           <a
-            href="https://wa.me/50581675714?text=Hola,%20quiero%20hacer%20un%20pedido"
+            href="https://wa.me/50589472132?text=Hola,%20quiero%20hacer%20un%20pedido"
             target="_blank" rel="noopener"
             class="btn btn--outline"
           >💬 Pedir por WhatsApp</a>
@@ -197,10 +197,6 @@
          SECCIÓN 5: PROMOCIONES
          Tarjetas de ofertas especiales del restaurante.
     =========================================================== -->
-    <!-- ===========================================================
-         SECCIÓN 5: PROMOCIONES
-         Tarjetas de ofertas especiales del restaurante.
-    =========================================================== -->
     <section class="promo" id="promociones" aria-label="Promociones">
       <div class="container">
         <span class="label">Ofertas Especiales</span>
@@ -235,7 +231,7 @@
                   value: 120
                 });
                 window.open(
-                  'https://wa.me/50581675714?text=' +
+                  'https://wa.me/50589472132?text=' +
                   encodeURIComponent('Hola, quiero aprovechar la *Promoción de Almuerzo Ejecutivo* 🍽️\n\nArroz + Tajadas + Carnes + Té frío por solo C$120.\n\n¿Está disponible ahora?'),
                   '_blank', 'noopener'
                 );
@@ -264,7 +260,7 @@
           hasta celebraciones corporativas, tenemos el menú perfecto para ti.
         </p>
         <a
-          href="https://wa.me/50581675714?text=Hola,%20me%20interesa%20el%20servicio%20de%20catering"
+          href="https://wa.me/50589472132?text=Hola,%20me%20interesa%20el%20servicio%20de%20catering"
           target="_blank" rel="noopener"
           class="btn btn--oscuro"
         >Conoce nuestros servicios →</a>
@@ -327,7 +323,7 @@
           <!-- Botones de acción -->
           <div class="contacto__acciones">
             <a
-              href="https://wa.me/50581675714"
+              href="https://wa.me/50589472132"
               target="_blank" rel="noopener"
               class="btn btn--verde"
               aria-label="Contactar por WhatsApp"
@@ -578,32 +574,6 @@
       </div>
     </section>
 
-      <!-- ===========================================================
-        SECCIÓN: INFORME DE VISITAS
-        Dashboard de Power BI embebido para visualizar
-        el informe de visitas del restaurante.
-    =========================================================== -->
-    <section class="informe" id="informe" aria-label="Informe de visitas">
-      <div class="container">
-        <span class="label">Análisis de Datos</span>
-        <h2 class="seccion__titulo">Informe de Visitas</h2>
-        <p class="reserva__intro">
-          Visualiza en tiempo real las estadísticas de visitas.
-        </p>
-
-        <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.10);">
-          <iframe
-            title="DefensaPowerBi"
-            src="https://app.powerbi.com/view?r=eyJrIjoiMDgzZDdjMzgtZjY4OS00YjVhLWE1ODktOTQ5ZWU1YjJmMWQxIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
-            frameborder="0"
-            allowFullScreen="true"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-
         
   </main>
 
@@ -625,7 +595,7 @@
         <address class="footer__direccion" style="font-style:normal;">
           2QCR+WP6, C. de los Pochotes<br>Ticuantepe, Nicaragua
         </address>
-        <p class="footer__meta">📞 +505 8167 5714</p>
+        <p class="footer__meta">📞 +505 505 8947 2132</p>
         <p class="footer__meta">🕐 Lun–Dom: 8:00 AM – 10:00 PM</p>
       </div>
 
@@ -684,5 +654,126 @@
   </footer>
 
   <script src="js/app.js"></script>
+
+  <!-- ===========================================================
+       BOTÓN FLOTANTE – Analytics / Power BI
+       Posición: inferior izquierda. Redirige a analytics.html
+  =========================================================== -->
+  <style>
+    /* Botón flotante base */
+    .fab-analytics {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .7rem 1.25rem .7rem .9rem;
+      background: #1a5c3a;           /* verde institucional */
+      color: #ffffff;
+      border: none;
+      border-radius: 9999px;
+      font-family: 'Lato', Helvetica, sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(26,92,58,.40);
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      /* El texto está visible por defecto */
+    }
+    .fab-analytics:hover {
+      background: #2a7a50;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(26,92,58,.50);
+    }
+    .fab-analytics:active {
+      transform: translateY(0) scale(.97);
+    }
+
+    /* Ícono circular interior */
+    .fab-analytics__icon {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,.15);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Pulso de atención (primera vez) */
+    .fab-analytics__pulso {
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      border: 2px solid #2a7a50;
+      animation: fabPulso 2.2s ease-out 1s 3;
+      pointer-events: none;
+    }
+    @keyframes fabPulso {
+      0%   { transform: scale(1);   opacity: .7; }
+      80%  { transform: scale(1.22); opacity: 0; }
+      100% { transform: scale(1.22); opacity: 0; }
+    }
+
+    /* Tooltip */
+    .fab-analytics__tooltip {
+      position: absolute;
+      bottom: calc(100% + .6rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: #1a1a1a;
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      padding: .3rem .75rem;
+      border-radius: 6px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .fab-analytics__tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1a1a1a;
+    }
+    .fab-analytics:hover .fab-analytics__tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Accesibilidad: foco visible */
+    .fab-analytics:focus-visible {
+      outline: 3px solid #c9572a;
+      outline-offset: 3px;
+    }
+
+    /* Responsive: solo ícono en pantallas muy pequeñas */
+    @media (max-width: 480px) {
+      .fab-analytics { padding: .75rem; }
+      .fab-analytics__label { display: none; }
+    }
+  </style>
+
+  <a
+    href="analytics.html"
+    class="fab-analytics"
+    role="button"
+    aria-label="Abrir panel de analíticas Power BI"
+    title="Ver Analytics"
+  >
+    <span class="fab-analytics__pulso" aria-hidden="true"></span>
+    <span class="fab-analytics__icon" aria-hidden="true">📊</span>
+    <span class="fab-analytics__label">Analytics</span>
+    <span class="fab-analytics__tooltip" aria-hidden="true">Panel de reportes Power BI</span>
+  </a>
+
 </body>
 </html>
