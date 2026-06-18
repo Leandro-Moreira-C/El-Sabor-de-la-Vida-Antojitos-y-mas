@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics – El Sabor de la Vida</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --c-verde:       #1a5c3a;
+      --c-verde-h:     #2a7a50;
+      --c-naranja:     #c9572a;
+      --c-naranja-h:   #e06630;
+      --c-crema:       #f0ede6;
+      --c-blanco:      #ffffff;
+      --c-negro:       #1a1a1a;
+      --c-gris:        #6b6b6b;
+      --c-gris-claro:  #e0ddd8;
+      --c-sidebar-bg:  #112e1e;
+      --f-display: 'Playfair Display', Georgia, serif;
+      --f-body:    'Lato', Helvetica, sans-serif;
+      --fs-xs:   0.75rem;
+      --fs-sm:   0.875rem;
+      --fs-base: 1rem;
+      --fs-lg:   1.25rem;
+      --fs-2xl:  2rem;
+      --sp-xs: 0.5rem;
+      --sp-sm: 1rem;
+      --sp-md: 1.5rem;
+      --sp-lg: 2.5rem;
+      --r-sm:  8px;
+      --r-md:  14px;
+      --r-lg:  20px;
+      --r-pill: 9999px;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.08);
+      --sh-md: 0 8px 24px rgba(0,0,0,.14);
+      --sh-lg: 0 16px 48px rgba(0,0,0,.22);
+      --sidebar-w: 270px;
+      --topbar-h:  64px;
+      --t: 0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--f-body);
+      background: #f4f2ee;
+      color: var(--c-negro);
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--c-sidebar-bg);
+      display: flex;
+      flex-direction: column;
+      z-index: 200;
+      transition: transform var(--t);
+      overflow-y: auto;
+    }
+    .sidebar__brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: var(--sp-md) var(--sp-md) var(--sp-sm);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .sidebar__brand-icon {
+      width: 42px; height: 42px;
+      background: var(--c-verde);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(255,255,255,.1);
+    }
+    .sidebar__brand-name {
+      font-family: var(--f-display);
+      font-size: var(--fs-sm);
+      color: var(--c-blanco);
+      line-height: 1.25;
+    }
+    .sidebar__brand-sub {
+      font-size: var(--fs-xs);
+      color: rgba(255,255,255,.45);
+      display: block;
+      font-family: var(--f-body);
+      font-weight: 400;
+    }
+    .sidebar__section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      padding: var(--sp-md) var(--sp-md) .4rem;
+    }
+    .sidebar__nav { flex: 1; padding-bottom: var(--sp-md); }
+    .sidebar__item {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .75rem var(--sp-md);
+      color: rgba(255,255,255,.65);
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      border-left: 3px solid transparent;
+      background: none;
+      width: 100%;
+      text-align: left;
+      transition: all var(--t);
+    }
+    .sidebar__item:hover {
+      background: rgba(255,255,255,.05);
+      color: var(--c-blanco);
+    }
+    .sidebar__item--activo {
+      background: rgba(201,87,42,.12);
+      color: var(--c-blanco);
+      border-left-color: var(--c-naranja);
+    }
+    .sidebar__item-icon {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,.06);
+      border-radius: var(--r-sm);
+      display: grid; place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: background var(--t);
+    }
+    .sidebar__item--activo .sidebar__item-icon {
+      background: var(--c-naranja);
+    }
+    .sidebar__item-badge {
+      margin-left: auto;
+      font-size: var(--fs-xs);
+      background: var(--c-naranja);
+      color: var(--c-blanco);
+      padding: .15rem .55rem;
+      border-radius: var(--r-pill);
+      font-weight: 700;
+    }
+    .sidebar__footer {
+      padding: var(--sp-sm) var(--sp-md);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .sidebar__back-btn {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      width: 100%;
+      padding: .65rem var(--sp-sm);
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r-md);
+      color: rgba(255,255,255,.7);
+      font-family: var(--f-body);
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--t);
+    }
+    .sidebar__back-btn:hover {
+      background: rgba(255,255,255,.13);
+      color: var(--c-blanco);
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: var(--sidebar-w);
+      right: 0;
+      height: var(--topbar-h);
+      background: var(--c-blanco);
+      border-bottom: 1px solid var(--c-gris-claro);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--sp-lg);
+      z-index: 100;
+      box-shadow: var(--sh-sm);
+    }
+    .topbar__left { display: flex; align-items: center; gap: .75rem; }
+    .topbar__menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .3rem;
+      color: var(--c-gris);
+      font-size: 1.4rem;
+    }
+    .topbar__breadcrumb { font-size: var(--fs-sm); color: var(--c-gris); }
+    .topbar__breadcrumb strong { color: var(--c-negro); font-weight: 700; }
+    .topbar__breadcrumb span { margin: 0 .4rem; }
+    .topbar__right { display: flex; align-items: center; gap: var(--sp-sm); }
+    .topbar__chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .3rem .85rem;
+      border-radius: var(--r-pill);
+      font-size: var(--fs-xs);
+      font-weight: 700;
+    }
+    .topbar__chip--live { background: rgba(26,92,58,.1); color: var(--c-verde); }
+    .topbar__chip--live::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--c-verde);
+      border-radius: 50%;
+      animation: pulso 1.6s infinite;
+    }
+    @keyframes pulso {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .5; transform: scale(.7); }
+    }
+    .topbar__time { font-size: var(--fs-xs); color: var(--c-gris); }
+
+    /* ── MAIN ── */
+    .main {
+      margin-left: var(--sidebar-w);
+      margin-top: var(--topbar-h);
+      flex: 1;
+      padding: var(--sp-lg);
+      min-height: calc(100vh - var(--topbar-h));
+    }
+    .view-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--sp-sm);
+      margin-bottom: var(--sp-lg);
+    }
+    .view-header__title {
+      font-family: var(--f-display);
+      font-size: var(--fs-2xl);
+      color: var(--c-negro);
+      line-height: 1.2;
+    }
+    .view-header__subtitle { font-size: var(--fs-sm); color: var(--c-gris); margin-top: .3rem; }
+    .view-header__actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+    .btn-accion {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .55rem 1.1rem;
+      border-radius: var(--r-pill);
+      font-family: var(--f-body);
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all var(--t);
+    }
+    .btn-accion--primario { background: var(--c-naranja); color: var(--c-blanco); border-color: var(--c-naranja); }
+    .btn-accion--primario:hover { background: var(--c-naranja-h); transform: translateY(-1px); box-shadow: var(--sh-sm); }
+    .btn-accion--outline { background: transparent; color: var(--c-gris); border-color: var(--c-gris-claro); }
+    .btn-accion--outline:hover { border-color: var(--c-verde); color: var(--c-verde); }
+
+    /* ── Power BI wrapper ── */
+    .pbi-wrapper {
+      background: var(--c-blanco);
+      border-radius: var(--r-lg);
+      box-shadow: var(--sh-md);
+      overflow: hidden;
+      border: 1px solid var(--c-gris-claro);
+    }
+    .pbi-wrapper__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .85rem var(--sp-md);
+      background: var(--c-verde);
+      color: var(--c-blanco);
+    }
+    .pbi-wrapper__bar-left { display: flex; align-items: center; gap: .7rem; }
+    .pbi-wrapper__bar-icon {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,.15);
+      border-radius: var(--r-sm);
+      display: grid; place-items: center;
+      font-size: 1rem;
+    }
+    .pbi-wrapper__bar-title { font-family: var(--f-display); font-size: var(--fs-base); font-weight: 700; }
+    .pbi-wrapper__bar-sub { font-size: var(--fs-xs); opacity: .7; display: block; }
+    .pbi-wrapper__bar-badge {
+      font-size: var(--fs-xs);
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.3);
+      padding: .2rem .65rem;
+      border-radius: var(--r-pill);
+      font-weight: 700;
+    }
+    .pbi-frame-container { position: relative; width: 100%; padding-top: 56.25%; }
+    .pbi-frame-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ── Placeholder (Dashboard pendiente) ── */
+    .pbi-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 4rem 2rem;
+      background: #f8f6f2;
+      text-align: center;
+    }
+    .pbi-placeholder__icon {
+      width: 72px; height: 72px;
+      background: rgba(26,92,58,.08);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 2rem;
+    }
+    .pbi-placeholder__title {
+      font-family: var(--f-display);
+      font-size: 1.25rem;
+      color: var(--c-negro);
+      font-weight: 700;
+    }
+    .pbi-placeholder__desc {
+      font-size: .875rem;
+      color: var(--c-gris);
+      max-width: 380px;
+      line-height: 1.6;
+    }
+    .pbi-placeholder__tag {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .35rem 1rem; border-radius: var(--r-pill);
+      background: rgba(201,87,42,.1); color: var(--c-naranja);
+      font-size: .75rem; font-weight: 700;
+    }
+
+    /* ── Views ── */
+    .view { display: none; }
+    .view--activa { display: block; }
+
+    /* ── Overlay móvil ── */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 150;
+    }
+    .overlay--visible { display: block; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(calc(-1 * var(--sidebar-w))); }
+      .sidebar--abierto { transform: translateX(0); box-shadow: var(--sh-lg); }
+      .topbar { left: 0; }
+      .topbar__menu-btn { display: block; }
+      .main { margin-left: 0; }
+    }
+    @media (max-width: 600px) {
+      .main { padding: var(--sp-sm); }
+      .topbar { padding: 0 var(--sp-sm); }
+      .view-header { flex-direction: column; }
+      .view-header__actions { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menú de analytics">
+
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-icon" aria-hidden="true">🍴</div>
+      <div>
+        <span class="sidebar__brand-name">El Sabor de la Vida</span>
+        <span class="sidebar__brand-sub">Panel de Analíticas</span>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Secciones del panel">
+
+      <p class="sidebar__section-label">Reportes Power BI</p>
+
+      <!-- 1. Informe Visual de la Página -->
+      <button
+        class="sidebar__item sidebar__item--activo"
+        id="nav-informe"
+        onclick="cambiarVista('informe')"
+        aria-current="page"
+        aria-label="Informe visual de la página"
+      >
+        <span class="sidebar__item-icon" aria-hidden="true">📈</span>
+        Informe Visual de la Página
+        <span class="sidebar__item-badge">PBI</span>
+      </button>
+
+      <!-- 2. Dashboard Panorámico -->
+      <button
+        class="sidebar__item"
+        id="nav-dashboard"
+        onclick="cambiarVista('dashboard')"
+        aria-label="Dashboard Panorámico"
+      >
+        <span class="sidebar__item-icon" aria-hidden="true">📊</span>
+        Dashboard Panorámico
+        <span class="sidebar__item-badge">PBI</span>
+      </button>
+
+      <!-- 3. Reporte de Entregable -->
+      <button
+        class="sidebar__item"
+        id="nav-entregable"
+        onclick="cambiarVista('entregable')"
+        aria-label="Reporte de Entregable"
+      >
+        <span class="sidebar__item-icon" aria-hidden="true">📋</span>
+        Reporte de Entregable
+        <span class="sidebar__item-badge">PBI</span>
+      </button>
+
+    </nav>
+
+    <div class="sidebar__footer">
+      <button
+        class="sidebar__back-btn"
+        onclick="window.location.href='index.html'"
+        aria-label="Volver al sitio principal"
+      >
+        ← Volver al Sitio
+      </button>
+    </div>
+
+  </aside>
+
+  <div class="overlay" id="overlay" onclick="cerrarSidebar()"></div>
+
+  <!-- TOPBAR -->
+  <header class="topbar" role="banner">
+    <div class="topbar__left">
+      <button class="topbar__menu-btn" id="menuBtn" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
+      <div class="topbar__breadcrumb" id="breadcrumb" aria-label="Ruta de navegación">
+        Analytics <span aria-hidden="true">›</span> <strong id="breadcrumb-seccion">Informe Visual de la Página</strong>
+      </div>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__chip topbar__chip--live">En vivo</span>
+      <span class="topbar__time" id="reloj" aria-live="off"></span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main" role="main">
+
+    <!-- VISTA 1: Informe Visual de la Página -->
+    <section class="view view--activa" id="view-informe" aria-label="Informe Visual de la Página">
+      <div class="view-header">
+        <div>
+          <h1 class="view-header__title">Informe Visual de la Página</h1>
+          <p class="view-header__subtitle">Análisis de comportamiento e información visual del sitio web</p>
+        </div>
+        <div class="view-header__actions">
+          <button class="btn-accion btn-accion--outline" onclick="recargarFrame('frame-informe')">↻ Actualizar</button>
+          <button class="btn-accion btn-accion--primario" onclick="pantallaCompleta('frame-informe')">⛶ Pantalla completa</button>
+        </div>
+      </div>
+      <div class="pbi-wrapper">
+        <div class="pbi-wrapper__bar">
+          <div class="pbi-wrapper__bar-left">
+            <div class="pbi-wrapper__bar-icon">📈</div>
+            <div>
+              <span class="pbi-wrapper__bar-title">Informe Visual de la Página</span>
+              <span class="pbi-wrapper__bar-sub">Conectado a Power BI · El Sabor de la Vida</span>
+            </div>
+          </div>
+          <span class="pbi-wrapper__bar-badge">Power BI</span>
+        </div>
+        <div class="pbi-frame-container">
+          <iframe
+            id="frame-informe"
+            title="Informe Visual de la Página"
+            src="https://app.powerbi.com/view?r=eyJrIjoiMDgzZDdjMzgtZjY4OS00YjVhLWE1ODktOTQ5ZWU1YjJmMWQxIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
+            allowfullscreen="true"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISTA 2: Dashboard Panorámico (pendiente) -->
+    <section class="view" id="view-dashboard" aria-label="Dashboard Panorámico">
+      <div class="view-header">
+        <div>
+          <h1 class="view-header__title">Dashboard Panorámico</h1>
+          <p class="view-header__subtitle">Visión general de métricas e indicadores clave del restaurante</p>
+        </div>
+      </div>
+      <div class="pbi-wrapper">
+        <div class="pbi-wrapper__bar">
+          <div class="pbi-wrapper__bar-left">
+            <div class="pbi-wrapper__bar-icon">📊</div>
+            <div>
+              <span class="pbi-wrapper__bar-title">Dashboard Panorámico</span>
+              <span class="pbi-wrapper__bar-sub">Power BI · Informe Panoramico</span>
+            </div>
+          </div>
+          <span class="pbi-wrapper__bar-badge">Power BI</span>
+        </div>
+        
+        
+          <div class="pbi-frame-container">
+            <iframe
+              id="frame-dashboard"
+              title="Dashboard Panorámico"
+              src="https://app.powerbi.com/view?r=eyJrIjoiZTI3NDUyNWUtMDA4Ni00ZWEzLWE3ZTYtNmFmMGM4ZGU3MjBlIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
+              allowfullscreen="true"
+              loading="lazy"
+            ></iframe>
+          </div>
+        
+      </div>
+    </section>
+
+    <!-- VISTA 3: Reporte de Entregable -->
+    <section class="view" id="view-entregable" aria-label="Reporte de Entregable">
+      <div class="view-header">
+        <div>
+          <h1 class="view-header__title">Reporte de Entregable</h1>
+          <p class="view-header__subtitle">Documentación y métricas del entregable del proyecto</p>
+        </div>
+        <div class="view-header__actions">
+          <button class="btn-accion btn-accion--outline" onclick="recargarFrame('frame-entregable')">↻ Actualizar</button>
+          <button class="btn-accion btn-accion--primario" onclick="pantallaCompleta('frame-entregable')">⛶ Pantalla completa</button>
+        </div>
+      </div>
+      <div class="pbi-wrapper">
+        <div class="pbi-wrapper__bar">
+          <div class="pbi-wrapper__bar-left">
+            <div class="pbi-wrapper__bar-icon">📋</div>
+            <div>
+              <span class="pbi-wrapper__bar-title">Reporte de Entregable</span>
+              <span class="pbi-wrapper__bar-sub">Conectado a Power BI · El Sabor de la Vida</span>
+            </div>
+          </div>
+          <span class="pbi-wrapper__bar-badge">Power BI</span>
+        </div>
+        <div class="pbi-frame-container">
+          <iframe
+            id="frame-entregable"
+            title="Reporte de Entregable"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNTFkNjIwMGQtN2E3Mi00M2FhLWI3NmYtNzdiMjE5MWU4YzVjIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
+            allowfullscreen="true"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const VISTAS = {
+      informe:    { nav: 'nav-informe',    view: 'view-informe',    titulo: 'Informe Visual de la Página' },
+      dashboard:  { nav: 'nav-dashboard',  view: 'view-dashboard',  titulo: 'Dashboard Panorámico' },
+      entregable: { nav: 'nav-entregable', view: 'view-entregable', titulo: 'Reporte de Entregable' }
+    };
+
+    let vistaActual = 'informe';
+
+    function cambiarVista(id) {
+      if (id === vistaActual) { cerrarSidebar(); return; }
+
+      const ant = VISTAS[vistaActual];
+      document.getElementById(ant.nav).classList.remove('sidebar__item--activo');
+      document.getElementById(ant.nav).removeAttribute('aria-current');
+      document.getElementById(ant.view).classList.remove('view--activa');
+
+      const nueva = VISTAS[id];
+      document.getElementById(nueva.nav).classList.add('sidebar__item--activo');
+      document.getElementById(nueva.nav).setAttribute('aria-current', 'page');
+      document.getElementById(nueva.view).classList.add('view--activa');
+      document.getElementById('breadcrumb-seccion').textContent = nueva.titulo;
+
+      vistaActual = id;
+      cerrarSidebar();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleSidebar() {
+      const sb = document.getElementById('sidebar');
+      const ov = document.getElementById('overlay');
+      const abierto = sb.classList.toggle('sidebar--abierto');
+      ov.classList.toggle('overlay--visible', abierto);
+      document.getElementById('menuBtn').setAttribute('aria-expanded', abierto);
+    }
+
+    function cerrarSidebar() {
+      document.getElementById('sidebar').classList.remove('sidebar--abierto');
+      document.getElementById('overlay').classList.remove('overlay--visible');
+      document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
+    }
+
+    function recargarFrame(frameId) {
+      const frame = document.getElementById(frameId);
+      if (!frame) return;
+      const src = frame.src;
+      frame.src = '';
+      setTimeout(() => { frame.src = src; }, 150);
+    }
+
+    function pantallaCompleta(frameId) {
+      const frame = document.getElementById(frameId);
+      if (!frame) return;
+      if (frame.requestFullscreen) frame.requestFullscreen();
+      else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+      else if (frame.mozRequestFullScreen) frame.mozRequestFullScreen();
+    }
+
+    function actualizarReloj() {
+      const ahora = new Date();
+      document.getElementById('reloj').textContent =
+        ahora.toLocaleTimeString('es-NI', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    actualizarReloj();
+    setInterval(actualizarReloj, 1000);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') cerrarSidebar();
+    });
+  </script>
+
+</body>
+</html>

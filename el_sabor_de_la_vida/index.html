@@ -15,7 +15,7 @@
 
 
 
-    <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Sabor de la Vida – Cocina Nicaragüense Auténtica</title>
 
@@ -35,31 +35,31 @@
 <body>
 
   <!-- ===========================================================
-       BLOQUE: NAV – BARRA DE NAVEGACIÓN PRINCIPAL
-       Fija en la parte superior. JS le agrega nav--scrolled
-       cuando el usuario baja más de 20px.
+      BLOQUE: NAV – BARRA DE NAVEGACIÓN PRINCIPAL
+      Fija en la parte superior. JS le agrega nav--scrolled
+      cuando el usuario baja más de 20px.
   =========================================================== -->
   <header class="nav" id="nav" role="banner">
     <div class="nav__inner">
 
       <!-- nav__logo – identidad de marca -->
-      <a href="#inicio" class="nav__logo" aria-label="Inicio – El Sabor de la Vida">
+      <a href="#Bienvenida" class="nav__logo" aria-label="Inicio – El Sabor de la Vida">
         <span class="nav__logo-icono" aria-hidden="true">🍴</span>
         <span class="nav__logo-texto">El Sabor de la Vida</span>
       </a>
 
       <!-- nav__menu – enlaces de escritorio -->
-      <nav class="nav__menu" id="navMenu" aria-label="Menú principal">
-        <a href="#inicio"        class="nav__enlace nav__enlace--activo">Inicio</a>
+          <nav class="nav__menu" id="navMenu" aria-label="Menú principal">
+        <a href="#inicio"        class="nav__enlace">Bienvenido</a>
         <a href="#menu"          class="nav__enlace">Menú</a>
         <a href="#galeria"       class="nav__enlace">Galería</a>
         <a href="#promociones"   class="nav__enlace">Promociones</a>
         <a href="#catering"      class="nav__enlace">Catering</a>
         <a href="#contacto"      class="nav__enlace">Contacto</a>
         <a href="#reservaciones" class="nav__enlace">Reservaciones</a>
-        <a href="#nosotros"      class="nav__enlace">Nosotros</a>
-
+        <a href="#historia"      class="nav__enlace">Nuestra Historia</a>
       </nav>
+
 
       <!-- nav__cta – botón reservar (escritorio) -->
       <a href="#reservaciones" class="btn btn--primario nav__cta" aria-label="Hacer una reservación">
@@ -85,13 +85,21 @@
   <main>
 
     <!-- ===========================================================
-         SECCIÓN 1: HERO / INICIO
-         Pantalla completa oscura con el título grande del restaurante,
-         subtítulo y dos botones CTA (menú y WhatsApp).
+        SECCIÓN 1: HERO / INICIO
+        Pantalla completa oscura con el título grande del restaurante,
+        subtítulo y dos botones CTA (menú y WhatsApp).
     =========================================================== -->
-    <section class="hero" id="inicio" aria-label="Inicio">
-      <!-- hero__textura – patrón decorativo -->
-      <div class="hero__textura" aria-hidden="true"></div>
+
+  <section class="hero" id="Bienvenida" data-vista="Bienvenida" aria-label="Bienvenida">   <!-- hero__fondo – carrusel automático de imágenes de fondo -->
+  <div class="hero__fondo" id="heroFondo" aria-hidden="true">
+    <div class="hero__slide hero__slide--activo" style="background-image:url('Imagen/Carrucel\ Inicio/hero-1.jpeg')"></div>
+    <div class="hero__slide" style="background-image:url('Imagen/Carrucel\ Inicio/hero-2.jpeg')"></div>
+    <div class="hero__slide" style="background-image:url('Imagen/Carrucel\ Inicio/hero-3.jpeg')"></div>
+  </div>
+  <!-- hero__overlay – oscurece las fotos para que el texto se lea -->
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <!-- hero__textura – patrón decorativo -->
+  <div class="hero__textura" aria-hidden="true"></div>
 
       <div class="hero__contenido">
         <!-- hero__badge – categoria del local -->
@@ -114,7 +122,7 @@
         <div class="hero__acciones">
           <a href="#menu" class="btn btn--primario">Ver Menú Completo</a>
           <a
-            href="https://wa.me/50581675714?text=Hola,%20quiero%20hacer%20un%20pedido"
+            href="https://wa.me/50589472132?text=Hola,%20quiero%20hacer%20un%20pedido"
             target="_blank" rel="noopener"
             class="btn btn--outline"
           >💬 Pedir por WhatsApp</a>
@@ -131,78 +139,305 @@
       </div>
     </section>
 
+
+<!-- INICIO -->
+  <!-- INICIO -->
+  <!-- INICIO -->
+  <section class="nosotros" id="inicio-nosotros" data-vista="inicio" aria-label="Nuestra historia">
+    <div class="nosotros__inner container">
+      <div class="nosotros__fotos">
+        <span class="nosotros__badge-año">
+          <strong>2014</strong>
+          <span>Desde</span>
+        </span>
+        <div class="nosotros__foto nosotros__foto--principal" role="img" aria-label="Cocina nicaragüense"></div>
+        <div class="nosotros__foto nosotros__foto--secundaria" role="img" aria-label="Platillo del restaurante"></div>
+      </div>
+      <div class="nosotros__texto">
+        <span class="nosotros__etiqueta">🤍 Nuestra Historia</span>
+        <h2 class="nosotros__titulo">
+          Tradición nicaragüense<br>
+          <em class="nosotros__titulo-acento">en cada platillo</em>
+        </h2>
+        <p class="nosotros__parrafo">
+          Desde 2014, llevamos el auténtico sabor de la cocina nicaragüense
+          a Ticuantepe. Cada receta es un tesoro familiar heredado de generaciones,
+          cada ingrediente es seleccionado a mano en los mercados locales.
+        </p>
+        <p class="nosotros__parrafo">
+          Nuestra misión es simple: hacerte sentir como en casa, con el
+          sabor que abraza el alma y la calidez que solo la cocina pinolera puede dar.
+        </p>
+        <div class="nosotros__acciones">
+          <a href="#galeria" class="btn btn--primario nosotros__btn-historia">Conoce nuestra historia →</a>
+          <a href="#menu" class="btn btn--outline-oscuro nosotros__btn-menu">🍴 Ver menú</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATO DESTACADO -->
+  <section class="plato-destacado" id="plato-destacado" data-vista="inicio" aria-label="Plato destacado">
+    <div class="container">
+      <div class="plato-destacado__cabecera">
+        <span class="plato-destacado__etiqueta">🔥 El Favorito de la Casa</span>
+        <h2 class="plato-destacado__titulo">Plato <em class="plato-destacado__titulo-acento">Destacado</em></h2>
+      </div>
+      <div class="plato-destacado__inner">
+        <div class="plato-destacado__foto-wrap">
+          <div class="plato-destacado__foto" style="background-image:url('Imagen/Inicio/PlatoEstrella.png')"></div>
+          <div class="plato-destacado__precio-badge">
+            <span class="plato-destacado__precio-desde">DESDE</span>
+            <span class="plato-destacado__precio-valor">C$350</span>
+          </div>
+        </div>
+        <div class="plato-destacado__info">
+          <span class="plato-destacado__categoria">Plato Fuerte</span>
+          <h3 class="plato-destacado__nombre">Criadillas de toro</h3>
+          <p class="plato-destacado__descripcion">
+            Nuestra estrella indiscutible. Jugoso, marinado con nuestro adobo secreto
+            de la casa, servida con crujientes tajadas de plátano verde. Un homenaje
+            a nuestro auténtico sabor pinolero.
+          </p>
+          <div class="plato-destacado__ingredientes">
+            <span class="plato-destacado__ingredientes-titulo">Ingredientes Destacados</span>
+            <div class="plato-destacado__tags">
+              <span class="plato-destacado__tag">🍴 Huevos de toro</span>
+              <span class="plato-destacado__tag">🌿 Plátano verde</span>
+              <span class="plato-destacado__tag">🧪 Adobo de la casa</span>
+            </div>
+          </div>
+          <a href="https://wa.me/50589472132?text=Hola,%20quiero%20pedir%20el%20plato%20destacado%20Criadillas%20de%20toro"
+            target="_blank" rel="noopener"
+            class="btn btn--primario plato-destacado__btn-pedir">💬 Pedir ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios-clientes" id="testimonios" data-vista="inicio" aria-label="Testimonios de clientes">
+    <div class="container">
+      <div class="testimonios-clientes__cabecera">
+        <span class="testimonios-clientes__etiqueta">💬 Testimonios</span>
+        <h2 class="testimonios-clientes__titulo">
+          Lo que dicen <em class="testimonios-clientes__titulo-acento">nuestros clientes</em>
+        </h2>
+        <p class="testimonios-clientes__subtitulo">
+          Historias reales de quienes han disfrutado de nuestra cocina
+        </p>
+      </div>
+      <div class="testimonios-clientes__tarjeta">
+        <div class="testimonios-clientes__comilla" aria-hidden="true">"</div>
+        <div class="testimonios-clientes__estrellas" aria-label="5 estrellas">★★★★★</div>
+        <blockquote class="testimonios-clientes__cita">
+          "Hice el viaje desde Managua para probar su carne asada. Valió
+          completamente la pena. El servicio es increíble y el ambiente súper
+          acogedor. ¡Volveré!"
+        </blockquote>
+        <div class="testimonios-clientes__autor">
+          <div class="testimonios-clientes__avatar" aria-hidden="true">👤</div>
+          <div>
+            <strong class="testimonios-clientes__nombre">Ana Lucía Vega</strong>
+            <span class="testimonios-clientes__detalle">Vino desde Managua</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios" data-vista="inicio" aria-label="Eventos y Servicios">
+    <div class="container">
+      <div class="servicios__cabecera">
+        <span class="servicios__etiqueta">🤍 SERVICIOS</span>
+        <h2 class="servicios__titulo">
+          Eventos y <em class="servicios__titulo-acento">Servicio a Domicilio</em>
+        </h2>
+        <p class="servicios__subtitulo">
+          Llevamos el auténtico sabor de Nicaragua a tus días especiales
+        </p>
+      </div>
+      <div class="servicios__grid">
+        <div class="servicios__tarjeta">
+          <div class="servicios__icono servicios__icono--rojo" aria-hidden="true">🚚</div>
+          <h3 class="servicios__nombre">Por Encargo</h3>
+          <p class="servicios__descripcion">Llevamos el sabor de Nicaragua, calientito y listo.</p>
+        </div>
+        <div class="servicios__tarjeta">
+          <div class="servicios__icono servicios__icono--verde" aria-hidden="true">🎂</div>
+          <h3 class="servicios__nombre">Eventos</h3>
+          <p class="servicios__descripcion">Menús para tus bodas, cumpleaños y celebraciones especiales.</p>
+        </div>
+        <div class="servicios__tarjeta">
+          <div class="servicios__icono servicios__icono--dorado" aria-hidden="true">🏢</div>
+          <h3 class="servicios__nombre">Corporativo</h3>
+          <p class="servicios__descripcion">Buffet empresarial o servicio a la mesa para reuniones de trabajo.</p>
+        </div>
+        <div class="servicios__tarjeta">
+          <div class="servicios__icono servicios__icono--naranja" aria-hidden="true">👨‍👩‍👧‍👦</div>
+          <h3 class="servicios__nombre">Familiar</h3>
+          <p class="servicios__descripcion">Desde nachos hasta un banquete completo para toda la familia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TESTIMONIOS -->
+
     
     <!-- ===========================================================
          SECCIÓN 3: MENÚ
-         Pestañas de categorías. Las tarjetas se inyectan
-         dinámicamente desde los datos en el bloque de JS.
     =========================================================== -->
-    <section class="menu" id="menu" aria-label="Nuestro menú">
-      <div class="container">
-        <span class="label">Nuestro Menú</span>
-        <h2 class="seccion__titulo">Platos que enamoran</h2>
+<section class="menu" id="menu" data-vista="menu" aria-label="Nuestro menú">
 
-        <!-- Pestañas de categorías del menú -->
-        <div class="menu__tabs" role="tablist" aria-label="Categorías del menú">
-          <button class="menu__tab menu__tab--activo" role="tab" data-categoria="platos"    aria-selected="true">Platos Fuertes</button>
-          <button class="menu__tab"                   role="tab" data-categoria="antojitos" aria-selected="false">Antojitos</button>
-          <button class="menu__tab"                   role="tab" data-categoria="ceviches"  aria-selected="false">Ceviches</button>
-          <button class="menu__tab"                   role="tab" data-categoria="bebidas"   aria-selected="false">Bebidas</button>
-          <button class="menu__tab"                   role="tab" data-categoria="extras"    aria-selected="false">Extras</button>
-        </div>
+  <!-- Banner hero del menú -->
+  <div class="menu-banner">
+    <div class="menu-banner__overlay" aria-hidden="true"></div>
+    <div class="menu-banner__contenido">
+      <span class="menu-banner__etiqueta">Nuestro Menú</span>
+      <h2 class="menu-banner__titulo">Explora Nuestros Sabores</h2>
+      <p class="menu-banner__subtitulo">Auténtica cocina nicaragüense preparada con recetas tradicionales</p>
+    </div>
+  </div>
 
-        <!-- Contenedor de tarjetas (se llena con JS) -->
-        <div class="menu__grid" id="menuGrid" aria-live="polite"></div>
-      </div>
-    </section>
+  <div class="container">
+    <span class="label">Nuestro Menú</span>
+    <h2 class="seccion__titulo">Platos que enamoran</h2>
 
-    <!-- ===========================================================
-         SECCIÓN 4: GALERÍA
-         Cuatro imágenes en grid con caption al hover.
+    <!-- Pestañas de categorías del menú -->
+    <div class="menu__tabs" role="tablist" aria-label="Categorías del menú">
+      <button class="menu__tab menu__tab--activo" role="tab" data-categoria="platos"     aria-selected="true">Platos Fuertes</button>
+      <button class="menu__tab"                   role="tab" data-categoria="antojitos"  aria-selected="false">Antojitos y Más</button>
+      <button class="menu__tab"                   role="tab" data-categoria="nachos"     aria-selected="false">Nachos Especiales</button>
+      <button class="menu__tab"                   role="tab" data-categoria="especiales" aria-selected="false">Especiales</button>
+      <button class="menu__tab"                   role="tab" data-categoria="ceviches"   aria-selected="false">Ceviches</button>
+      <button class="menu__tab"                   role="tab" data-categoria="extras"     aria-selected="false">Extras y Aderezos</button>
+      <button class="menu__tab"                   role="tab" data-categoria="cervezas"   aria-selected="false">Cervezas</button>
+      <button class="menu__tab"                   role="tab" data-categoria="refrescos"  aria-selected="false">Refrescos</button>
+      <button class="menu__tab"                   role="tab" data-categoria="licores"    aria-selected="false">Licores y Cócteles</button>
+    </div>
+
+    <!-- Contenedor de tarjetas (se llena con JS) -->
+    <div class="menu__grid" id="menuGrid" aria-live="polite"></div>
+  </div>
+
+</section>
+
+   <!-- ===========================================================
+         SECCIÓN 4: GALERÍA – Banner + Filtros + Carrusel
     =========================================================== -->
-    <section class="galeria" id="galeria" aria-label="Galería de fotos">
-      <div class="container">
-        <!-- galeria__cabecera – título + link de ver todas -->
-        <div class="galeria__cabecera">
-          <div>
-            <span class="label">El Sabor de la Vida</span>
-            <h2 class="seccion__titulo" style="margin-bottom:0">Galería</h2>
-          </div>
-          <a href="#galeria" class="link-flecha">Ver todas las fotos →</a>
-        </div>
+    <section class="galeria" id="galeria" data-vista="galeria" aria-label="Galería de fotos">
 
-        <!-- galeria__grid – cuadrícula de imágenes -->
-        <div class="galeria__grid">
-          <div class="galeria__celda">
-            <div class="galeria__imagen galeria__imagen--salon" role="img" aria-label="Salón del restaurante"></div>
-            <div class="galeria__caption">Nuestro Salón Principal</div>
-          </div>
-          <div class="galeria__celda">
-            <div class="galeria__imagen galeria__imagen--cocina" role="img" aria-label="Preparación de platillos"></div>
-            <div class="galeria__caption">Preparación de Platillos</div>
-          </div>
-          <div class="galeria__celda">
-            <div class="galeria__imagen galeria__imagen--bebidas" role="img" aria-label="Bebidas refrescantes"></div>
-            <div class="galeria__caption">Bebidas Refrescantes</div>
-          </div>
-          <div class="galeria__celda">
-            <div class="galeria__imagen galeria__imagen--postres" role="img" aria-label="Postres artesanales"></div>
-            <div class="galeria__caption">Postres Artesanales</div>
-          </div>
+      <!-- BANNER -->
+      <div class="galeria-banner">
+        <div class="galeria-banner__overlay" aria-hidden="true"></div>
+        <div class="galeria-banner__contenido">
+          <span class="galeria-banner__etiqueta">Galería</span>
+          <h2 class="galeria-banner__titulo">Nuestro Mundo</h2>
+          <p class="galeria-banner__subtitulo">Un vistazo a nuestro espacio, nuestra cocina y los platillos que preparamos con amor</p>
         </div>
       </div>
+
+      <!-- FILTROS -->
+      <div class="galeria-filtros container">
+        <button class="galeria-filtros__btn galeria-filtros__btn--activo" data-filtro="todos">Todos</button>
+        <button class="galeria-filtros__btn" data-filtro="restaurante">Restaurante</button>
+        <button class="galeria-filtros__btn" data-filtro="cocina">Cocina</button>
+        <button class="galeria-filtros__btn" data-filtro="platillos">Platillos</button>
+        <button class="galeria-filtros__btn" data-filtro="bebidas">Bebidas</button>
+        <button class="galeria-filtros__btn" data-filtro="postres">Postres</button>
+      </div>
+
+      <!-- CARRUSEL -->
+      <div class="galeria-carrusel container">
+        <div class="galeria-carrusel__pista" id="galeriaPista">
+          <div class="galeria-carrusel__slide" data-cat="restaurante">
+            <img src="Imagen/Galeria/Galeria_1.png" alt="Restaurante 1" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="cocina">
+            <img src="Imagen/Galeria/Galeria_2.png" alt="Cocina 2" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="bebidas">
+            <img src="Imagen/Galeria/Galeria_3.png" alt="Bebidas 3" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="postres">
+            <img src="Imagen/Galeria/Galeria_4.png" alt="Postres 4" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="platillos">
+            <img src="Imagen/Galeria/Galeria_5.png" alt="Platillos 5" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="restaurante">
+            <img src="Imagen/Galeria/Galeria_6.png" alt="Restaurante 6" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="cocina">
+            <img src="Imagen/Galeria/Galeria_7.png" alt="Cocina 7" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="platillos">
+            <img src="Imagen/Galeria/Galeria_8.png" alt="Platillos 8" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="bebidas">
+            <img src="Imagen/Galeria/Galeria_9.png" alt="Bebidas 9" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="postres">
+            <img src="Imagen/Galeria/Galeria_10.png" alt="Postres 10" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="restaurante">
+            <img src="Imagen/Galeria/Galeria_11.png" alt="Restaurante 11" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="cocina">
+            <img src="Imagen/Galeria/Galeria_12.png" alt="Cocina 12" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="platillos">
+            <img src="Imagen/Galeria/Galeria_13.png" alt="Platillos 13" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="bebidas">
+            <img src="Imagen/Galeria/Galeria_14.png" alt="Bebidas 14" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="postres">
+            <img src="Imagen/Galeria/Galeria_15.png" alt="Postres 15" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="restaurante">
+            <img src="Imagen/Galeria/Galeria_16.png" alt="Restaurante 16" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="cocina">
+            <img src="Imagen/Galeria/Galeria_17.png" alt="Cocina 17" loading="lazy">
+          </div>
+          <div class="galeria-carrusel__slide" data-cat="platillos">
+            <img src="Imagen/Galeria/Galeria_18.png" alt="Platillos 18" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Flechas -->
+        <button class="galeria-carrusel__flecha galeria-carrusel__flecha--prev" id="galeriaPrev" aria-label="Anterior">&#8249;</button>
+        <button class="galeria-carrusel__flecha galeria-carrusel__flecha--next" id="galeriaNxt"  aria-label="Siguiente">&#8250;</button>
+
+        <!-- Puntos -->
+        <div class="galeria-carrusel__puntos" id="galeriaPuntos"></div>
+      </div>
+
     </section>
 
     <!-- ===========================================================
          SECCIÓN 5: PROMOCIONES
          Tarjetas de ofertas especiales del restaurante.
     =========================================================== -->
-    <!-- ===========================================================
-         SECCIÓN 5: PROMOCIONES
-         Tarjetas de ofertas especiales del restaurante.
-    =========================================================== -->
-    <section class="promo" id="promociones" aria-label="Promociones">
+    
+<section class="promo" id="promociones" data-vista="promociones" aria-label="Promociones">
+
+  <!-- BANNER PROMOCIONES -->
+  <div class="promo-banner">
+    <div class="promo-banner__overlay" aria-hidden="true"></div>
+    <div class="promo-banner__contenido">
+      <span class="promo-banner__etiqueta">Promociones</span>
+      <h2 class="promo-banner__titulo">Promociones y Eventos</h2>
+      <p class="promo-banner__subtitulo">Aprovecha nuestras ofertas y únete a los eventos que celebran la cultura nicaragüense</p>
+    </div>
+  </div>
+
       <div class="container">
+
+
+
         <span class="label">Ofertas Especiales</span>
         <h2 class="seccion__titulo">Promociones En Local</h2>
 
@@ -235,7 +470,7 @@
                   value: 120
                 });
                 window.open(
-                  'https://wa.me/50581675714?text=' +
+                  'https://wa.me/50589472132?text=' +
                   encodeURIComponent('Hola, quiero aprovechar la *Promoción de Almuerzo Ejecutivo* 🍽️\n\nArroz + Tajadas + Carnes + Té frío por solo C$120.\n\n¿Está disponible ahora?'),
                   '_blank', 'noopener'
                 );
@@ -248,6 +483,77 @@
 
         </div>
       </div>
+
+      <!-- PRÓXIMOS EVENTOS -->
+      <div class="promo-eventos container">
+        <div class="promo-eventos__cabecera">
+          <h2 class="promo-eventos__titulo">Próximos Eventos</h2>
+          <p class="promo-eventos__subtitulo">Celebraciones próximas para ti</p>
+        </div>
+
+        <div class="promo-eventos__grid">
+
+          <!-- Evento 1: Mundial FIFA 2026 -->
+          <article class="promo-eventos__tarjeta promo-eventos__tarjeta--verde">
+            <div class="promo-eventos__header">
+              <span class="promo-eventos__icono" aria-hidden="true">⚽</span>
+              <div>
+                <h3 class="promo-eventos__nombre">Mundial FIFA 2026</h3>
+                <p class="promo-eventos__fecha">Todos los días durante Junio</p>
+              </div>
+            </div>
+            <p class="promo-eventos__descripcion">
+              Disfruta de tu selección favorita, con nosotros.
+            </p>
+            <span class="promo-eventos__horario">🕐 Todo el mes de Junio</span>
+          </article>
+
+          <!-- Evento 2: Día del Padre -->
+          <article class="promo-eventos__tarjeta promo-eventos__tarjeta--naranja">
+            <div class="promo-eventos__header">
+              <span class="promo-eventos__icono" aria-hidden="true">👨‍👧</span>
+              <div>
+                <h3 class="promo-eventos__nombre">Día del Padre</h3>
+                <p class="promo-eventos__fecha">23 de Junio</p>
+              </div>
+            </div>
+            <p class="promo-eventos__descripcion">
+              Celebración con cocteles, comida y mucha felicidad para Papá.
+            </p>
+            <span class="promo-eventos__horario">🕐 Todo el día</span>
+          </article>
+
+          <!-- Evento 3: Final Mundial -->
+          <article class="promo-eventos__tarjeta promo-eventos__tarjeta--dorado">
+            <div class="promo-eventos__header">
+              <span class="promo-eventos__icono" aria-hidden="true">🏆</span>
+              <div>
+                <h3 class="promo-eventos__nombre">Final Mundial</h3>
+                <p class="promo-eventos__fecha">19 de Julio</p>
+              </div>
+            </div>
+            <p class="promo-eventos__descripcion">
+              El día más esperado para los futboleros de corazón, con muchas promociones y animación.
+            </p>
+            <span class="promo-eventos__horario">🕐 1:00 PM</span>
+          </article>
+
+        </div>
+
+        <!-- Boletín -->
+        <div class="promo-boletin">
+          <p class="promo-boletin__texto">¿Quieres recibir notificaciones de nuevas promociones?</p>
+          
+          <a
+            href="https://wa.me/50589472132?text=Hola,%20quiero%20suscribirme%20al%20boletín%20de%20promociones"
+            target="_blank" rel="noopener"
+            class="btn btn--oscuro promo-boletin__btn"
+            aria-label="Suscribirse al boletín de promociones por WhatsApp"
+          >
+            ✉️ Suscríbete a nuestro boletín
+          </a>
+
+      </div>
     </section>
 
     <!-- ===========================================================
@@ -255,36 +561,90 @@
          Banner centrado con descripción del servicio y
          íconos representativos de cada tipo de evento.
     =========================================================== -->
-    <section class="catering" id="catering" aria-label="Servicio de catering">
-      <div class="catering__contenido">
-        <span class="label">Servicio Especial</span>
-        <h2 class="catering__titulo">Servicio a Domicilio y Catering</h2>
-        <p class="catering__descripcion">
-          Llevamos el sabor de Nicaragua hasta tu evento. Desde reuniones familiares
-          hasta celebraciones corporativas, tenemos el menú perfecto para ti.
-        </p>
-        <a
-          href="https://wa.me/50581675714?text=Hola,%20me%20interesa%20el%20servicio%20de%20catering"
-          target="_blank" rel="noopener"
-          class="btn btn--oscuro"
-        >Conoce nuestros servicios →</a>
+   <section class="catering" id="catering" data-vista="catering" aria-label="Servicio de catering">
 
-        <!-- Íconos de tipos de servicio -->
-        <div class="catering__iconos">
-          <div class="catering__icono" role="img" title="Restaurante"  aria-label="Restaurante">🍴</div>
-          <div class="catering__icono" role="img" title="Eventos"      aria-label="Eventos">🎂</div>
-          <div class="catering__icono" role="img" title="Bar"          aria-label="Bar">🍸</div>
-          <div class="catering__icono" role="img" title="Personal"     aria-label="Atención personalizada">👥</div>
-          <div class="catering__icono" role="img" title="A domicilio"  aria-label="Servicio a domicilio">🚚</div>
+      <!-- BANNER CATERING -->
+      <div class="catering-banner">
+        <div class="catering-banner__overlay" aria-hidden="true"></div>
+        <div class="catering-banner__contenido">
+          <span class="catering-banner__etiqueta">Servicios</span>
+          <h2 class="catering-banner__titulo">Catering y Servicio a Domicilio</h2>
+          <p class="catering-banner__subtitulo">Llevamos el auténtico sabor de Nicaragua a donde tú estés</p>
         </div>
       </div>
-    </section>
 
+      <!-- TARJETAS DE SERVICIOS -->
+      <div class="catering-servicios container">
+        <div class="catering-servicios__cabecera">
+          <h2 class="catering-servicios__titulo">Nuestros Servicios</h2>
+          <p class="catering-servicios__subtitulo">Llevamos el auténtico sabor de Nicaragua.</p>
+        </div>
+
+        <div class="catering-servicios__grid">
+
+          <!-- Encargos -->
+          <article class="catering-servicios__tarjeta">
+            <div class="catering-servicios__icono-wrap catering-servicios__icono-wrap--rojo" aria-hidden="true">🚚</div>
+            <h3 class="catering-servicios__nombre">Encargos</h3>
+            <p class="catering-servicios__descripcion">
+              Llevamos el sabor de Nicaragua, Pedidos por WhatsApp o teléfono para ti.
+            </p>
+            <ul class="catering-servicios__lista" aria-label="Detalles">
+              <li>✔ Pedidos desde C$ 200</li>
+              <li>✔ Tiempo estimado: 30-45 min</li>
+            </ul>
+          </article>
+
+          <!-- Para Eventos -->
+          <article class="catering-servicios__tarjeta">
+            <div class="catering-servicios__icono-wrap catering-servicios__icono-wrap--verde" aria-hidden="true">👥</div>
+            <h3 class="catering-servicios__nombre">Catering para Eventos</h3>
+            <p class="catering-servicios__descripcion">
+              Desde reuniones familiares hasta tus bodas y eventos corporativos. Menús personalizados para cualquier ocasión.
+            </p>
+            <ul class="catering-servicios__lista" aria-label="Detalles">
+              <li>✔ Menús personalizados</li>
+              <li>✔ Servicio completo incluido</li>
+              <li>✔ Desde 10 personas</li>
+            </ul>
+          </article>
+
+          <!-- Eventos Corporativos -->
+          <article class="catering-servicios__tarjeta">
+            <div class="catering-servicios__icono-wrap catering-servicios__icono-wrap--dorado" aria-hidden="true">🏢</div>
+            <h3 class="catering-servicios__nombre">Eventos Corporativos</h3>
+            <p class="catering-servicios__descripcion">
+              Comida nicaragüense para tus reuniones de trabajo, lanzamientos o celebraciones de equipo.
+            </p>
+            <ul class="catering-servicios__lista" aria-label="Detalles">
+              <li>✔ Buffet o servicio a la mesa</li>
+              <li>✔ Facturación disponible</li>
+              <li>✔ Horario flexible</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="catering-servicios__cta">
+          
+          <a
+            href="https://wa.me/50589472132?text=Hola,%20quiero%20contratar%20el%20servicio%20de%20catering"
+            target="_blank" rel="noopener"
+            class="btn btn--primario catering-servicios__btn"
+            aria-label="Contratar servicio de catering por WhatsApp"
+          >
+            💬 Contratar Catering
+          </a>
+        </div>
+      </div>
+
+    </section>
     <!-- ===========================================================
          SECCIÓN 7: CONTACTO / VISÍTANOS
          Datos de contacto + mapa de Google embebido.
     =========================================================== -->
-    <section class="contacto" id="contacto" aria-label="Información de contacto">
+    <section class="contacto" id="contacto" data-vista="contacto" aria-label="Información de contacto">
       <div class="contacto__inner container">
 
         <!-- Columna izquierda: información -->
@@ -327,7 +687,7 @@
           <!-- Botones de acción -->
           <div class="contacto__acciones">
             <a
-              href="https://wa.me/50581675714"
+              href="https://wa.me/50589472132"
               target="_blank" rel="noopener"
               class="btn btn--verde"
               aria-label="Contactar por WhatsApp"
@@ -365,7 +725,7 @@
          Los datos se envían al backend (api/reservaciones.php)
          mediante fetch() y también se redirige a WhatsApp.
     =========================================================== -->
-    <section class="reserva" id="reservaciones" aria-label="Formulario de reservaciones">
+    <section class="reserva" id="reservaciones" data-vista="reservaciones" aria-label="Formulario de reservaciones">
       <div class="container">
         <span class="label">¿Listo para visitarnos?</span>
         <h2 class="seccion__titulo">Hacer una Reservación</h2>
@@ -527,162 +887,414 @@
     </section>
 
 <!-- ===========================================================
-         SECCIÓN ultimo: NOSOTROS
-         Historia del restaurante (columna izquierda) +
-         tarjeta de testimonio verde (columna derecha).
+        SECCIÓN ultimo: NOSOTROS
+        Historia del restaurante (columna izquierda) +
+        tarjeta de testimonio verde (columna derecha).
     =========================================================== -->
-    <section class="nosotros" id="nosotros" aria-label="Nuestra historia">
-      <div class="nosotros__inner container">
-
-        <!-- Columna izquierda: historia -->
-        <div class="nosotros__texto">
-          <span class="label">Nuestra Historia</span>
-          <h2 class="nosotros__titulo">
-            Tradición nicaragüense<br>en cada platillo
-          </h2>
-          <p class="nosotros__parrafo">
-            Desde 2015, llevamos el auténtico sabor de la cocina nicaragüense
-            a Ticuantepe. Cada receta es un tesoro familiar, cada ingrediente
-            es seleccionado con amor.
-          </p>
-          <p class="nosotros__parrafo">
-            Nuestra misión es simple: hacerte sentir como en casa con
-            el sabor que abraza el alma.
-          </p>
-          <a href="#galeria" class="link-flecha">Conoce nuestra historia →</a>
-        </div>
-
-        <!-- Columna derecha: testimonio -->
-        <div class="testimonio" role="region" aria-label="Testimonio de cliente">
-          <span class="testimonio__etiqueta">Testimonio</span>
-          <blockquote class="testimonio__cita">
-            "La comida más auténtica de Ticuantepe. Cada vez que vengo
-            me siento como en la casa de mi abuela en Nicaragua."
-          </blockquote>
-          <div class="testimonio__autor">
-            <div class="testimonio__avatar" aria-hidden="true">👤</div>
-            <div>
-              <strong class="testimonio__nombre">María González</strong>
-              <span class="testimonio__rol">Cliente frecuente</span>
-            </div>
-            <button
-              class="testimonio__nav"
-              id="btnTestimonio"
-              aria-label="Siguiente testimonio"
-            >›</button>
-
-          </div>
+    
 
 
+ <!-- NUESTRA HISTORIA -->
+<div class="nosotros-banner" data-vista="historia" aria-label="Sobre Nosotros">
+  <div class="nosotros-banner__overlay" aria-hidden="true"></div>
+  <div class="nosotros-banner__contenido">
+    <span class="nosotros-banner__etiqueta">Sobre Nosotros</span>
+    <h2 class="nosotros-banner__titulo">Nuestra Historia</h2>
+    <p class="nosotros-banner__subtitulo">Tradición, familia y el sabor de Nicaragua en cada platillo</p>
+  </div>
+</div>
+
+<section class="historia-seccion" id="historia" data-vista="historia" aria-label="Nuestra Historia">
+  <div class="historia-seccion__inner container">
+
+    <!-- Columna izquierda: texto -->
+    <div class="historia-seccion__texto">
+      <span class="historia-seccion__etiqueta">Nuestra Historia</span>
+      <h2 class="historia-seccion__titulo">
+        De una cocina familiar a <em class="historia-seccion__titulo-acento">tu mesa</em>
+      </h2>
+      <p class="historia-seccion__parrafo">
+        Todo comenzó en 2014, cuando Doña Lucia decidió compartir sus recetas
+        familiares con los vecinos de Ticuantepe. Lo que empezó como un pequeño
+        negocio en la cocina de su casa, rápidamente se convirtió en un lugar de
+        encuentro para quienes buscaban el auténtico sabor de Nicaragua.
+      </p>
+      <p class="historia-seccion__parrafo">
+        Hoy, El Sabor de la Vida no es solo un restaurante — es un pedacito de
+        Nicaragua donde cada platillo cuenta una historia, cada ingrediente es
+        elegido con cuidado, y cada cliente se va como familia.
+      </p>
+          <div class="historia-seccion__fundadora">
+        <img
+          src="Imagen/Nosotro/Fundadora.png"
+          alt="Lucia Valle – Fundadora"
+          class="historia-seccion__fundadora-foto"
+        />
+        <div>
+          <strong class="historia-seccion__fundadora-nombre">Lucia Valle</strong>
+          <span class="historia-seccion__fundadora-rol" style="display:block;font-size:var(--fs-xs);color:var(--c-gris);">Fundadora</span>
         </div>
       </div>
-    </section>
+    </div>
 
-      <!-- ===========================================================
-        SECCIÓN: INFORME DE VISITAS
-        Dashboard de Power BI embebido para visualizar
-        el informe de visitas del restaurante.
-    =========================================================== -->
-    <section class="informe" id="informe" aria-label="Informe de visitas">
-      <div class="container">
-        <span class="label">Análisis de Datos</span>
-        <h2 class="seccion__titulo">Informe de Visitas</h2>
-        <p class="reserva__intro">
-          Visualiza en tiempo real las estadísticas de visitas.
-        </p>
-
-        <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.10);">
-          <iframe
-            title="DefensaPowerBi"
-            src="https://app.powerbi.com/view?r=eyJrIjoiMDgzZDdjMzgtZjY4OS00YjVhLWE1ODktOTQ5ZWU1YjJmMWQxIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
-            frameborder="0"
-            allowFullScreen="true"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;">
-          </iframe>
-        </div>
+    <!-- Columna derecha: foto con insignia -->
+    <div class="historia-seccion__foto-wrap">
+      <img
+        src="Imagen/Nosotro/Ambiente.png"
+        alt="Ambiente del restaurante El Sabor de la Vida"
+        class="historia-seccion__foto"
+      />
+      <div class="historia-seccion__insignia">
+        <span class="historia-seccion__insignia-numero">9+</span>
+        <span class="historia-seccion__insignia-texto">Años de historia</span>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
+<!-- NUESTROS VALORES -->
+<section class="valores" data-vista="historia" aria-label="Nuestros Valores">
+  <div class="valores__inner container">
+    <div class="valores__cabecera">
+      <span class="valores__etiqueta">Nuestros Valores</span>
+      <h2 class="valores__titulo">Lo que nos <em class="valores__titulo-acento">define</em></h2>
+    </div>
+    <div class="valores__grid">
+
+      <div class="valores__tarjeta">
+        <div class="valores__icono valores__icono--naranja">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h3 class="valores__nombre">Pasión</h3>
+        <p class="valores__descripcion">Cocinamos con el corazón, porque sabemos que la comida hecha con amor sabe mejor.</p>
+      </div>
+
+      <div class="valores__tarjeta">
+        <div class="valores__icono valores__icono--verde">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M8 6a4 4 0 0 1 8 0c0 4-4 6-4 6s-4-2-4-6z"/></svg>
+        </div>
+        <h3 class="valores__nombre">Ingredientes Locales</h3>
+        <p class="valores__descripcion">Trabajamos con productores locales para ofrecerte lo más fresco de nuestra tierra.</p>
+      </div>
+
+      <div class="valores__tarjeta">
+        <div class="valores__icono valores__icono--dorado">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4zm0 10h6v6H4zM14 4h6v6h-6zm0 10h6v6h-6z"/></svg>
+        </div>
+        <h3 class="valores__nombre">Familia</h3>
+        <p class="valores__descripcion">Somos una familia que extiende su mesa a todos los que visitan nuestro restaurante.</p>
+      </div>
+
+      <div class="valores__tarjeta">
+        <div class="valores__icono valores__icono--naranja">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg>
+        </div>
+        <h3 class="valores__nombre">Calidad</h3>
+        <p class="valores__descripcion">Cada platillo pasa por nuestros estándares más exigentes antes de llegar a tu mesa.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
-        
+<!-- NUESTRO EQUIPO -->
+<section class="equipo" data-vista="historia" aria-label="Nuestro Equipo">
+  <div class="equipo__inner container">
+    <div class="equipo__cabecera">
+      <span class="equipo__etiqueta">Nuestro Equipo</span>
+      <h2 class="equipo__titulo">Las manos detrás del <em class="equipo__titulo-acento">sabor</em></h2>
+    </div>
+
+    <div class="equipo__grid">
+
+      <!-- Fundadora -->
+      <div class="equipo__miembro equipo__miembro--fundadora">
+        <div class="equipo__foto-wrap">
+          <img src="Imagen/Nosotro/Fundadora.png" alt="Lucia Valle" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Lucia Valle</strong>
+        <span class="equipo__rol">Fundadora</span>
+      </div>
+
+      <!-- Carlos Rivas -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Rivas" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Carlos Rivas</strong>
+        <span class="equipo__rol">Chef Principal</span>
+      </div>
+
+      <!-- Clara Condega -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Clara Condega" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Clara Condega</strong>
+        <span class="equipo__rol">Cocinera</span>
+      </div>
+
+      <!-- Thelma Toledo -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Thelma Toledo" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Thelma Toledo</strong>
+        <span class="equipo__rol">Mesera</span>
+      </div>
+
+      <!-- Francisco Somarriba -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Francisco Somarriba" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Francisco Somarriba</strong>
+        <span class="equipo__rol">Bartender</span>
+      </div>
+
+      <!-- Darén Toledo -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Darén Toledo" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Darén Toledo</strong>
+        <span class="equipo__rol">Asistente de Cocina</span>
+      </div>
+
+      <!-- Fransileth Somarriba -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Fransileth Somarriba" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Fransileth Somarriba</strong>
+        <span class="equipo__rol">Cajera</span>
+      </div>
+
+      <!-- Katherine Muñoz -->
+      <div class="equipo__miembro">
+        <div class="equipo__foto-wrap">
+          <img src="https://randomuser.me/api/portraits/women/57.jpg" alt="Katherine Muñoz" class="equipo__foto" />
+        </div>
+        <strong class="equipo__nombre">Katherine Muñoz</strong>
+        <span class="equipo__rol">Mesera</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
   </main>
 
 
 
   <!-- ===========================================================
        PIE DE PÁGINA
-       Cuatro columnas: marca, boletín, navegación, redes.
+       Cuatro columnas: marca, navegación, redes.
   =========================================================== -->
   <footer class="footer" role="contentinfo">
-    <div class="footer__principal container">
+  <div class="footer__principal container">
 
-      <!-- Columna 1: Información del restaurante -->
-      <div class="footer__columna">
-        <div class="footer__logo">
-          <span class="nav__logo-icono" aria-hidden="true">🍴</span>
-          <strong>El Sabor de la Vida</strong>
-        </div>
-        <address class="footer__direccion" style="font-style:normal;">
-          2QCR+WP6, C. de los Pochotes<br>Ticuantepe, Nicaragua
-        </address>
-        <p class="footer__meta">📞 +505 8167 5714</p>
-        <p class="footer__meta">🕐 Lun–Dom: 8:00 AM – 10:00 PM</p>
+    <!-- Columna 1: Información del restaurante -->
+    <div class="footer__columna">
+      <div class="footer__logo">
+        <span class="nav__logo-icono" aria-hidden="true">🍴</span>
+        <strong>El Sabor de la Vida</strong>
       </div>
-
-      <!-- Columna 2: Boletín de noticias -->
-      <div class="footer__columna">
-        <h3 class="footer__encabezado">Boletín</h3>
-        <form class="footer__boletin" id="boletinForm" novalidate aria-label="Suscripción al boletín">
-          <input
-            class="footer__boletin-input"
-            type="email"
-            name="correo"
-            placeholder="Tu correo"
-            required
-            aria-label="Correo electrónico para el boletín"
-          />
-          <button type="submit" class="footer__boletin-btn" aria-label="Suscribirse">›</button>
-        </form>
-        <p class="footer__pista">Recibe promociones y novedades directamente.</p>
-      </div>
-
-      <!-- Columna 3: Navegación rápida -->
-      <div class="footer__columna">
-        <h3 class="footer__encabezado">Navegación</h3>
-        <nav class="footer__nav" aria-label="Navegación del pie de página">
-          <a href="#menu"          class="footer__enlace">Menú</a>
-          <a href="#galeria"       class="footer__enlace">Galería</a>
-          <a href="#catering"      class="footer__enlace">Catering</a>
-          <a href="#reservaciones" class="footer__enlace">Reservaciones</a>
-        </nav>
-      </div>
-
-      <!-- Columna 4: Redes sociales -->
-      <div class="footer__columna">
-        <h3 class="footer__encabezado">Síguenos</h3>
-        <div class="footer__redes">
-          <a href="#" class="footer__red">📘 Facebook</a>
-          <a href="#" class="footer__red">📷 Instagram</a>
-          <a
-            href="https://wa.me/50581675714"
-            target="_blank" rel="noopener"
-            class="footer__red"
-          >💬 WhatsApp</a>
-        </div>
-      </div>
-
+      <address class="footer__direccion" style="font-style:normal;">
+        2QCR+WP6, C. de los Pochotes<br>Ticuantepe, Nicaragua
+      </address>
+      <p class="footer__meta">📞 +505 505 8947 2132</p>
+      <p class="footer__meta">🕐 Lun–Dom: 8:00 AM – 10:00 PM</p>
     </div>
 
-    <!-- Barra inferior de copyright -->
-    <div class="footer__barra">
-      <span>© 2026 El Sabor de la Vida. Todos los derechos reservados.</span>
-      <nav class="footer__legal" aria-label="Links legales">
-        <a href="#contacto" class="footer__enlace">Contacto</a>
-        <a href="#nosotros" class="footer__enlace">Sobre Nosotros</a>
+    <!-- Columna 2: Navegación rápida -->
+    <div class="footer__columna">
+      <h3 class="footer__encabezado">Navegación</h3>
+      <nav class="footer__nav" aria-label="Navegación del pie de página">
+        <a href="#menu"          class="footer__enlace">Menú</a>
+        <a href="#galeria"       class="footer__enlace">Galería</a>
+        <a href="#catering"      class="footer__enlace">Catering</a>
+        <a href="#reservaciones" class="footer__enlace">Reservaciones</a>
       </nav>
     </div>
-  </footer>
+
+
+<!-- Columna 3: Redes sociales -->
+  <div class="footer__columna">
+    <h3 class="footer__encabezado">Síguenos</h3>
+
+    <div class="footer__redes">
+
+    <a href="https://www.facebook.com/p/Sabor-de-la-vida-Antojitos-y-m%C3%A1s-61575448185835/"
+       target="_blank"
+       rel="noopener"
+       aria-label="Facebook"
+       class="footer__red">
+      <img src="Imagen/Redes sociales/facebook.png" alt="Facebook">
+      <span>Facebook</span>
+    </a>
+
+    <a href="https://wa.me/50589472132"
+       target="_blank"
+       rel="noopener"
+       aria-label="WhatsApp"
+       class="footer__red">
+      <img src="Imagen/Redes sociales/social.png" alt="WhatsApp">
+      <span>WhatsApp</span>
+    </a>
+    </div>
+  </div>
+</div>  
+
+  <!-- Barra inferior de copyright -->
+  <div class="footer__barra">
+    <span>© 2026 El Sabor de la Vida. Todos los derechos reservados.</span>
+    <nav class="footer__legal" aria-label="Links legales">
+      <a href="#contacto"  class="footer__enlace">Contacto</a>
+<a href="#historia"  class="footer__enlace">Nuestra Historia</a>
+    </nav>
+  </div>
+</footer>
 
   <script src="js/app.js"></script>
+
+  <!-- ===========================================================
+       BOTÓN FLOTANTE – Analytics / Power BI
+       Posición: inferior izquierda. Redirige a analytics.html
+  =========================================================== -->
+  <style>
+    /* Botón flotante base */
+    .fab-analytics {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .7rem 1.25rem .7rem .9rem;
+      background: #1a5c3a;           /* verde institucional */
+      color: #ffffff;
+      border: none;
+      border-radius: 9999px;
+      font-family: 'Lato', Helvetica, sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(26,92,58,.40);
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      /* El texto está visible por defecto */
+    }
+    .fab-analytics:hover {
+      background: #2a7a50;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(26,92,58,.50);
+    }
+    .fab-analytics:active {
+      transform: translateY(0) scale(.97);
+    }
+
+    /* Ícono circular interior */
+    .fab-analytics__icon {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,.15);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Pulso de atención (primera vez) */
+    .fab-analytics__pulso {
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      border: 2px solid #2a7a50;
+      animation: fabPulso 2.2s ease-out 1s 3;
+      pointer-events: none;
+    }
+    @keyframes fabPulso {
+      0%   { transform: scale(1);   opacity: .7; }
+      80%  { transform: scale(1.22); opacity: 0; }
+      100% { transform: scale(1.22); opacity: 0; }
+    }
+
+    /* Tooltip */
+    .fab-analytics__tooltip {
+      position: absolute;
+      bottom: calc(100% + .6rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: #1a1a1a;
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      padding: .3rem .75rem;
+      border-radius: 6px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .fab-analytics__tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1a1a1a;
+    }
+    .fab-analytics:hover .fab-analytics__tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Accesibilidad: foco visible */
+    .fab-analytics:focus-visible {
+      outline: 3px solid #c9572a;
+      outline-offset: 3px;
+    }
+
+    /* Responsive: solo ícono en pantallas muy pequeñas */
+    @media (max-width: 480px) {
+      .fab-analytics { padding: .75rem; }
+      .fab-analytics__label { display: none; }
+    }
+  </style>
+
+  <a
+    href="analytics.html"
+    class="fab-analytics"
+    role="button"
+    aria-label="Abrir panel de analíticas Power BI"
+    title="Ver Analytics"
+  >
+    <span class="fab-analytics__pulso" aria-hidden="true"></span>
+    <span class="fab-analytics__icon" aria-hidden="true">📊</span>
+    <span class="fab-analytics__label">Analytics</span>
+    <span class="fab-analytics__tooltip" aria-hidden="true">Panel de reportes Power BI</span>
+  </a>
+
+<!-- ===========================================================
+       MODAL FLOTANTE – Variantes de un plato (precio por opción)
+       Se llena dinámicamente desde app.js (abrirModalVariantes).
+  =========================================================== -->
+  <div class="modal-variantes" id="modalVariantes" aria-hidden="true">
+    <div class="modal-variantes__overlay" id="modalVariantesOverlay"></div>
+    <div class="modal-variantes__caja" role="dialog" aria-modal="true" aria-labelledby="modalVariantesTitulo">
+      <button class="modal-variantes__cerrar" id="modalVariantesCerrar" aria-label="Cerrar">✕</button>
+      <h3 class="modal-variantes__titulo" id="modalVariantesTitulo"></h3>
+      <div class="modal-variantes__lista" id="modalVariantesLista"></div>
+    </div>
+  </div>
+
 </body>
 </html>
